@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JF Barbearia</title>
+    <link rel="shortcut icon" href="../../static//Images/Logo.svg">
+    <link rel="stylesheet" href="../static/Style/bootstrap.css">
+    <link rel="stylesheet" href="../static/Style/styles.css">
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sidebar">
+        <center>
+        <a href="/dashboard"><img alt="Jf Barber" src="../static/Images/Logo.svg" height="100px"></a>
+        <img class="img-profile" src="../static/Images/Profile.png" height="150px">
+        </center>
+        <ul style="margin-left: 50px;">
+            <li><a href="/dashboard"><i class="fas fa-home"></i>Dashboard</a></li>
+            <li><a href="/registrados"><i class="fas fa-users"></i>Clientes</a></li>
+            <li><a href="/horarios"><i class="fas fa-clock"></i>Horários</a></li>
+            <li><a href="/produtos_registrados"><i class="fas fa-shopping-bag"></i>Produtos</a></li>
+            <li><a href="/logout"><i class="fas fa-sign-out-alt"></i>Sair</a></li>
+
+        </ul> 
+    </div>
+    <div class="main_content">
+        <div class="header"></div>  
+        <div class="info">
+    <h1 class="text-center text-primary">Cadastrar Produtos</h1>
+    <center><form action="/cadastro_de_produtos" method="POST">
+        <br>
+
+        
+        <span class="input input--hoshi">
+          <input class="input__field input__field--hoshi" type="text" name="nome" id="nome" required>
+          <label class="input__label input__label--hoshi input__label--hoshi-color-1" for="input-4">
+              <span class="input__label-content input__label-content--hoshi">Nome</span>
+            </label>
+          </span>
+          
+          <br>
+          <span class="input input--hoshi">
+            <input type="text" name="preco" id="preco" class="input__field input__field--hoshi" required>
+            <label class="input__label input__label--hoshi input__label--hoshi-color-1" for="input-4">
+            <span class="input__label-content input__label-content--hoshi">Preço</span>
+          </label>
+        </span>
+        
+        <br>
+        <span class="input input--hoshi">
+          <input type="number" name="quantidade" id="quantidade" class="input__field input__field--hoshi">
+          <label class="input__label input__label--hoshi input__label--hoshi-color-1" for="input-4">
+            <span class="input__label-content input__label-content--hoshi">Quantidade</span>
+          </label>
+        </span>
+
+          <CENTER><button type="submit" class="btn-send mt-4"><span>ENVIAR &nbsp;</span></button></CENTER>
+        </div>
+    </form></center>
+    <div style="text-align: center;color: crimson;">
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class=flashes>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    {% block body %}{% endblock %}
+    </div>
+</body>
+</html>

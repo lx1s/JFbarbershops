@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realize seu Login</title>
+    <link rel="shortcut icon" href="../../static//Images/Logo.svg">
+    <link rel="stylesheet" href="../../static/Style/bootstrap.css">
+    <link rel="stylesheet" href="../../../static/Style/styles.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar ml-6 mt-2">
+        <a class="navbar-brand" href="/">
+          <img src="../../static/Images/Logo.svg" height="85px" alt="Jf Barbearia" loading="lazy">
+        </a>
+        <nav class="navbar navbar-expand-lg navbar-light mr-6 ">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav font-nav-bar">
+                <li class="nav-item mr-3">
+                    <a class="nav-link" href="/historia">Historia <span class="sr-only">(current)</span></a>
+                  </li>
+                <li class="nav-item mr-3">
+                  <a class="nav-link" href="/servicos">Serviços <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item mr-3">
+                  <a class="nav-link" href="/galeria">Galeria</a>
+                </li>
+                <li class="nav-item mr-3">
+                  <a class="nav-link" href="/faleconosco">Contato</a>
+                </li>
+                <li class="nav-item mr-3">
+                  <a class="nav-link" href="/login" style="color:#C17B3D">Login</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+      </nav>
+
+      <h1 class="text-center mt-2">Galeria de Fotos</h1>
+
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <center><img class="d-block w-50 img-responsive" src="../../static/Images/Banco_de_Imagens/106265129_269810387444551_5119528851727836778_n.jpg" alt="Primeiro Slide"></center>
+          </div>
+          <div class="carousel-item">
+            <center><img class="d-block w-50 img-responsive" src="../../static/Images/Banco_de_Imagens/107112127_2662491520676537_8793494170653398975_n.jpg" alt="Segundo Slide"></center>
+          </div>
+          <div class="carousel-item">
+            <center><img class="d-block w-50 img-responsive" src="../../static/Images/Banco_de_Imagens/26184181_2059322174312491_1790026250236985344_n.jpg" alt="Terceiro Slide"></center>
+          </div>
+          <div class="carousel-item">
+            <center><img class="d-block w-50 img-responsive" src="../../static/Images/Banco_de_Imagens/26406347_267495003783827_8021226977220362240_n.jpg" alt="Terceiro Slide"></center>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Próximo</span>
+        </a>
+      </div>
+</body>
+</html>

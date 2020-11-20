@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JF Barbearia</title>
+    <link rel="shortcut icon" href="../../static//Images/Logo.svg">
+    <link rel="stylesheet" href="../static/Style/bootstrap.css">
+    <link rel="stylesheet" href="../static/Style/styles.css">
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sidebar">
+        <center>
+        <a href="/clientesindex"><img alt="Jf Barber" src="../static/Images/Logo.svg" height="100px"></a>
+        <img class="img-profile" src="../static/Images/Profile.png" height="150px">
+        </center>
+        <ul style="margin-left: 50px;">
+            <li><a href="/clientesindex"><i class="fas fa-home"></i>Dashboard</a></li>
+            <li><a href="/agendar"><i class="fas fa-clock"></i>Agende Seu Horário</a></li>
+            <li><a href="/logout"><i class="fas fa-sign-out-alt"></i>Sair</a></li>
+
+        </ul>
+    </div>
+        <div class="main_content">
+        <div class="header"></div>  
+        <div class="info">
+          <h1 class="text-center text-primary">Agende seu horário</h1>
+
+            <center>
+            <form action="/agendar" method="POST">
+            <br>
+
+            <span class="input input--hoshi">            
+            <input class="input__field input__field--hoshi" type="text" name="nome" id="nome" required>
+            <label class="input__label input__label--hoshi input__label--hoshi-color-1" for="input-4">
+              <span class="input__label-content input__label-content--hoshi">Nome</span>
+            </label>
+          </span>
+
+            <span class="input input--hoshi">            
+                <input class="input__field input__field--hoshi" type="email" name="email" id="email" required>
+                <label class="input__label input__label--hoshi input__label--hoshi-color-1" for="input-4">
+                  <span class="input__label-content input__label-content--hoshi">E-mail</span>
+                </label>
+              </span>
+            
+              <span class="input input--hoshi">  
+                <input class="input__field input__field--hoshi" type="datetime-local" name="horarios" id="horarios" required>
+                <label class="input__label input__label--hoshi input__label--hoshi-color-1" for="input-4">
+                    <span class="input__label-content input__label-content--hoshi">Selecione o dia e horário</span>
+                </label>
+              </span>
+                <CENTER><button type="submit" class="btn-send mt-4"><span style="font-size:16px;">AGENDAR &nbsp;</span></button></CENTER>
+
+
+        </form></center>
+    <div style="text-align: center;color: crimson;">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <ul class=flashes>
+          {% for message in messages %}
+          <li>{{ message }}</li>
+          {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
+    {% block body %}{% endblock %}
+    </div>
+</body>
+</html>

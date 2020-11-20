@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastre-se</title>
+    <link rel="shortcut icon" href="../../static//Images/Logo.svg">
+    <link rel="shortcut icon" href="../../static//Images/Logo.svg">
+    <link rel="stylesheet" href="../static/Style/bootstrap.css">
+    <link rel="stylesheet" href="../../static/Style/styles.css">
+
+</head>
+<body>
+    <nav class="navbar ml-6 mt-2">
+        <a class="navbar-brand" href="/">
+          <img src="../static/Images/Logo.svg" height="85px" alt="Jf Barbearia" loading="lazy">
+        </a>
+        <nav class="navbar navbar-expand-lg navbar-light mr-6 ">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav font-nav-bar">
+                <li class="nav-item mr-3">
+                  <a class="nav-link" href="/historia">Historia <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item mr-3">
+                  <a class="nav-link" href="/servicos">Serviços <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item mr-3">
+                  <a class="nav-link" href="/galeria">Galeria</a>
+                </li>
+                <li class="nav-item mr-3">
+                  <a class="nav-link" href="/faleconosco">Contato</a>
+                </li>
+                <li class="nav-item mr-3">
+                  <a class="nav-link" href="/login" style="color:#C17B3D">Login</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+      </nav>
+
+
+    <h1 class="text-center mt-2">Cadastre-se</h1>
+    <p class="text-center">Faça o cadastro e agende agora mesmo.</p>
+    <center><form action="/cadastrar" class="container" method="POST">
+        <br>
+
+
+        <span class="input input--hoshi">        
+            <input class="input__field input__field--hoshi" type="text" name="nome" id="nome" required>
+              <label class="input__label input__label--hoshi input__label--hoshi-color-1" for="input-4">
+                <span class="input__label-content input__label-content--hoshi">Nome</span>
+              </label>
+            </span>
+       
+
+           <span class="input input--hoshi">             
+            <input class="input__field input__field--hoshi" type="number" name="telefone" id="telefone" required>
+            <label class="input__label input__label--hoshi input__label--hoshi-color-1" for="input-4">
+              <span class="input__label-content input__label-content--hoshi">Telefone</span>
+            </label>
+          </span>
+      
+          <span class="input input--hoshi">            
+            <input class="input__field input__field--hoshi" type="email" name="email" id="email" required>
+            <label class="input__label input__label--hoshi input__label--hoshi-color-1" for="input-4">
+              <span class="input__label-content input__label-content--hoshi">E-mail</span>
+            </label>
+          </span>
+     
+          <span class="input input--hoshi"> 
+            <input class="input__field input__field--hoshi" type="password" name="senha" id="senha" required>
+            <label class="input__label input__label--hoshi input__label--hoshi-color-1" for="input-4">
+              <span class="input__label-content input__label-content--hoshi">Senha</span>
+            </label>
+          </span>
+
+          <CENTER><button type="submit" class="btn-send mt-4"><span>ENVIAR &nbsp;</span></button></CENTER>
+          <script>
+            /*!
+* classie - class helper functions
+* from bonzo https://github.com/ded/bonzo
+* 
+* classie.has( elem, 'my-class' ) -> true/false
+* classie.add( elem, 'my-new-class' )
+* classie.remove( elem, 'my-unwanted-class' )
+* classie.toggle( elem, 'my-class' )
+*/
+
+/*jshint browser: true, strict: true, undef: true */
+/*global define: false */
+
+( function( window ) {
+
+'use strict';
+
+// class helper functions from bonzo https://github.com/ded/bonzo
+
+function classReg( className ) {
+return new RegExp("(^|\\s+)" + className + "(\\s+|$)");
+}
+
+// classList support for class management
+// altho to be fair, the api sucks because it won't accept multiple classes at once
+var hasClass, addClass, removeClass;
+
+if ( 'classList' in document.documentElement ) {
+hasClass = function( elem, c ) {
+  return elem.classList.contains( c );
+};
+addClass = function( elem, c ) {
+  elem.classList.add( c );
+};
+removeClass = function( elem, c ) {
+  elem.classList.remove( c );
+};
+}
+else {
+hasClass = function( elem, c ) {
+  return classReg( c ).test( elem.className );
+};
+addClass = function( elem, c ) {
+  if ( !hasClass( elem, c ) ) {
+    elem.className = elem.className + ' ' + c;
+  }
+};
+removeClass = function( elem, c ) {
+  elem.className = elem.className.replace( classReg( c ), ' ' );
+};
+}
+
+function toggleClass( elem, c ) {
+var fn = hasClass( elem, c ) ? removeClass : addClass;
+fn( elem, c );
+}
+
+var classie = {
+// full names
+hasClass: hasClass,
+addClass: addClass,
+removeClass: removeClass,
+toggleClass: toggleClass,
+// short names
+has: hasClass,
+add: addClass,
+remove: removeClass,
+toggle: toggleClass
+};
+
+// transport
+if ( typeof define === 'function' && define.amd ) {
+// AMD
+define( classie );
+} else {
+// browser global
+window.classie = classie;
+}
+
+})( window );
+
+    (function() {
+      // trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+      if (!String.prototype.trim) {
+        (function() {
+          // Make sure we trim BOM and NBSP
+          var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+          String.prototype.trim = function() {
+            return this.replace(rtrim, '');
+          };
+        })();
+      }
+
+      [].slice.call( document.querySelectorAll( 'input.input__field' ) ).forEach( function( inputEl ) {
+        // in case the input is already filled..
+        if( inputEl.value.trim() !== '' ) {
+          classie.add( inputEl.parentNode, 'input--filled' );
+        }
+
+        // events:
+        inputEl.addEventListener( 'focus', onInputFocus );
+        inputEl.addEventListener( 'blur', onInputBlur );
+      } );
+
+      function onInputFocus( ev ) {
+        classie.add( ev.target.parentNode, 'input--filled' );
+      }
+
+      function onInputBlur( ev ) {
+        if( ev.target.value.trim() === '' ) {
+          classie.remove( ev.target.parentNode, 'input--filled' );
+        }
+      }
+    })();
+
+          </script>
+        </div>
+        <div style="text-align: center;color: crimson;">
+          {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul class=flashes>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+      {% block body %}{% endblock %}
+      </div>
+    </form></center>
+</body>
+</html>
